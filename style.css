@@ -1,3 +1,9 @@
+:root {
+  --color-neutral: #f4f4f4;
+  --color-main: #1c1c1c;
+  --color-special: #ff9933;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,8 +11,10 @@
 }
 
 html {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
+  scroll-snap-type: y mandatory;
+  scroll-snap-stop: always;
 }
 
 body {
@@ -24,13 +32,14 @@ h6 {
   font-weight: bold;
 }
 
-p {
+p,
+a {
   font-family: "Lato";
 }
 
 a {
   text-decoration: none;
-  color: rgb(192, 117, 42);
+  color: var(--color-main);
   font-weight: bold;
 }
 
@@ -65,11 +74,19 @@ nav > ul > li {
   display: inline-block;
   padding-left: 1rem;
 }
+nav > a {
+  color: var(--color-special);
+}
+
+nav > a.active {
+  color: var(--color-special);
+  font-weight: bold;
+}
 
 .main {
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 400%;
   justify-content: center;
   align-items: center;
   align-content: center;
@@ -107,4 +124,25 @@ footer > ul > li {
 
 .side > ul > li {
   padding: 0.3rem 0;
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+}
+
+.content {
+  width: 60vw;
+  height: 60vh;
+  border: 0.2rem solid black;
+  border-radius: 0.4rem;
+  background-color: rgba(0, 0, 0, 0.05);
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
